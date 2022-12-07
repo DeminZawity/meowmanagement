@@ -1,0 +1,239 @@
+{
+  "users": [
+    {
+      "id": 1,
+      "fullName": "Demin Zawity",
+      "email": "demin@gmail.com",
+      "password": "Demin"
+    },
+    {
+      "id": 2,
+      "fullName": "Lynn Samuelson",
+      "email": "lynn@gmail.com",
+      "password": "Lynn"
+    },
+    {
+      "id": 3,
+      "fullName": "Trevor Guinn",
+      "email": "trevor@gmail.com",
+      "password": "Trevor"
+    },
+    {
+      "id": 4,
+      "fullName": "Sydney Noh",
+      "email": "sydney@gmail.com",
+      "password": "Sydney"
+    }
+  ],
+  "cats": [
+    {
+      "id": 1,
+      "catName": "Suzie Belete",
+      "gender": "Female",
+      "breed": "Domestic Shorthair",
+      "coatColor": "Black",
+      "usersId": 1,
+      "vetInformationId": 1
+    },
+    {
+      "id": 2,
+      "catName": "Theo Belete",
+      "gender": "Male",
+      "breed": "Siamese",
+      "coatColor": "White",
+      "usersId": 1,
+      "vetInformationId": 2
+    },
+    {
+      "id": 3,
+      "catName": "Jasper Belete",
+      "gender": "Male",
+      "breed": "Siamese",
+      "coatColor": "White",
+      "usersId": 1,
+      "vetInformationId": 3
+    },
+    {
+      "id": 4,
+      "catName": "Peanut Noh",
+      "gender": "Female",
+      "breed": "Maine Coon",
+      "coatColor": "Orange",
+      "usersId": 4,
+      "vetInformationId": 4
+    },
+    {
+      "id": 5,
+      "catName": "Midnight Samuelson",
+      "gender": "Female",
+      "breed": "Domestic Longhair",
+      "coatColor": "Black",
+      "usersId": 2,
+      "vetInformationId": 5
+    },
+    {
+      "id": 6,
+      "catName": "Pepper Guinn",
+      "gender": "Male",
+      "breed": "Domestic Longhair",
+      "coatColor": "Brown",
+      "usersId": 3,
+      "vetInformationId": 6
+    },
+    {
+      "catName": "Alex",
+      "gender": "Female",
+      "breed": "Turkish Longhair",
+      "coatColor": "Gray",
+      "usersId": 1,
+      "vetInformationId": null,
+      "id": 7
+    }
+  ],
+  "vetInformations": [
+    {
+      "id": 1,
+      "vetName": "Dr. Charles Kinard",
+      "vetAddress": "1062 Middle Tennessee Blvd. Murfreesboro, TN 37130",
+      "vetPhoneNumber": "310-571-6500",
+      "vetFaxNumber": "310-571-6700"
+    },
+    {
+      "id": 2,
+      "vetName": "Dr. Kathryn McPherson",
+      "vetAddress": "1806 Memorial Blvd. Suite C Murfreesboro, TN 37129",
+      "vetPhoneNumber": "615-896-9524",
+      "vetFaxNumber": "615-743-3549"
+    },
+    {
+      "id": 3,
+      "vetName": "Dr. Kylie Chciuk",
+      "vetAddress": "1807 NW Broad St, Murfreesboro, TN 37129",
+      "vetPhoneNumber": "615-893-1728",
+      "vetFaxNumber": "615-696-2574"
+    },
+    {
+      "id": 4,
+      "vetName": "Dr. Kelsey Hays",
+      "vetAddress": "2114 N. Thompson Ln Murfreesboro, TN, 37129",
+      "vetPhoneNumber": "615-895-1240",
+      "vetFaxNumber": "615-549-2468"
+    },
+    {
+      "id": 5,
+      "vetName": "Dr. Courtney Beasley",
+      "vetAddress": "2114 N. Thompson Ln Murfreesboro, TN, 37129",
+      "vetPhoneNumber": "615-895-1240",
+      "vetFaxNumber": "615-549-2468"
+    },
+    {
+      "id": 6,
+      "vetName": "Dr. Donna M. Steuart",
+      "vetAddress": "2215 Keeneland Commercial Boulevard Murfreesboro, TN  37127",
+      "vetPhoneNumber": "615-890-6878",
+      "vetFaxNumber": "615-378-1975"
+    }
+  ],
+  "vetVisits": [
+    {
+      "id": 1,
+      "visitConcern": "Physical Checkup",
+      "visitDate": "10-01-2022",
+      "visitNotes": "Completed an annual physical checkup. There were no new concerns reported.",
+      "catsId": 1
+    },
+    {
+      "id": 2,
+      "visitConcern": "Bald Patches on Stomach",
+      "visitDate": "07-22-2022",
+      "visitNotes": "Completed allergy testing. Noted that he is allergic to his kitty litter. Will need to buy him kitty litter for cats with allergies.",
+      "catsId": 2
+    },
+    {
+      "id": 3,
+      "visitConcern": "Physical Checkup",
+      "visitDate": "06-15-2022",
+      "visitNotes": "Completed an annual physical checkup. There were no new concerns reported except for his weight. Need to put him on a diet.",
+      "catsId": 6
+    },
+    {
+      "id": 4,
+      "visitConcern": "Randomly Throwing Up",
+      "visitDate": "05-20-2022",
+      "visitNotes": "She is eating her food too fast which is causing her to vomit. I need to start feeding her in smaller amounts.",
+      "catsId": 4
+    },
+    {
+      "id": 5,
+      "visitConcern": "Meowing for NO reason",
+      "visitDate": "08-05-2022",
+      "visitNotes": "I thought he was meowing because he was sick. He is just a talkative breed and will probably meow loudly for the rest of his life.",
+      "catsId": 3
+    },
+    {
+      "id": 6,
+      "visitConcern": "Pooping outside of the litter box",
+      "visitDate": "03-17-2022",
+      "visitNotes": "She was pooping outside of the litterbox because she had worms. The vet gave me medicine to give to her. ",
+      "catsId": 5
+    },
+    {
+      "id": 7,
+      "visitConcern": "Won't stop sleeping",
+      "visitDate": "12-01-2022",
+      "visitNotes": "Your cat is just lazy. They just want to sleep, so just leave them alone.",
+      "catsId": 1
+    }
+  ],
+  "shots": [
+    {
+      "id": 1,
+      "completed": "10-01-2022",
+      "typeOfShot": "Rabies",
+      "dueDate": "10-01-2023",
+      "catsId": 1
+    },
+    {
+      "id": 2,
+      "completed": "07-22-2022",
+      "typeOfShot": "Rabies",
+      "dueDate": "07-22-2023",
+      "catsId": 2
+    },
+    {
+      "id": 2,
+      "completed": "08-05-2022",
+      "typeOfShot": "Rabies",
+      "dueDate": "08-05-2023",
+      "catsId": 3
+    },
+    {
+      "id": 4,
+      "completed": "05-20-2022",
+      "typeOfShot": "Rabies",
+      "dueDate": "05-20-2023",
+      "catsId": 4
+    },
+    {
+      "id": 5,
+      "completed": "03-17-2022",
+      "typeOfShot": "Rabies",
+      "dueDate": "03-17-2023",
+      "catsId": 5
+    },
+    {
+      "id": 6,
+      "completed": "06-15-2022",
+      "typeOfShot": "Rabies",
+      "dueDate": "06-15-2023",
+      "catsId": 6
+    },
+    {
+      "id": 7,
+      "completed": "12-01-2022",
+      "typeOfShot": "Rabies",
+      "dueDate": "12-01-2023",
+      "catsId": 1
+    }
+  ]
+}
