@@ -20,6 +20,7 @@ function CatDetails() {
 
   var fetchDetails = async () => {
     var CatDetails = await GetCatDetails(ID, vetID);
+    console.log(CatDetails);
     setVetInfo(CatDetails.vetInformation);
     setVetVisit(CatDetails.vetVisits.filter((obj) => obj.id == Math.max(...CatDetails.vetVisits.map((o) => o.id)))[0]);
     setShots(CatDetails.shots.filter((obj) => obj.id == Math.max(...CatDetails.shots.map((o) => o.id)))[0]);
@@ -32,8 +33,8 @@ function CatDetails() {
         <Spacer vertical size={40} />
         <CatCardContainer column>
           {vetInfo !== null && <VetInfo vetInfo={vetInfo} />}
-          {vetVisit !== null && <RecentVisit vetVisit={vetVisit} />}
-          {shots !== null && <RecentShot shots={shots} />}
+          {vetVisit !== null && <RecentVisit vetVisit={vetVisit} CatID={ID} />}
+          {shots !== null && <RecentShot shots={shots} CatID={ID} />}
         </CatCardContainer>
       </MainContainer>
     </Screen>

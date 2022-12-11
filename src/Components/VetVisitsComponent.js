@@ -3,41 +3,44 @@ import { useNavigate, useParams } from "react-router-dom";
 import { useEffect, useState } from "react";
 import { Text, Screen, Container, Spacer } from "../Helpers/Design/Models";
 import { StethoscopeIcon, ArrowIcon } from "../Assets/Icons/Icons";
-import { GetVetVisits } from "../Helpers/API/Calls";
-import { VetVisitsComponent } from "../Components/VetVisitsComponent";
 
-function VetVisits() {
-  const [vetVisits, setVetVisits] = useState([]);
-  const { CatID } = useParams();
-  const navigate = useNavigate();
-
-  useEffect(() => {
-    fetchVisits();
-  }, []);
-
-  var fetchVisits = async () => {
-    var visits = await GetVetVisits(CatID);
-    setVetVisits(visits);
-    console.log(vetVisits);
-  };
-
+export function VetVisitsComponent({ vetVisit }) {
   return (
-    <Screen>
-      <MainContainer>
-        <Title> Vet Visits</Title>
-        <Spacer vertical size={40} />
-        <VisitsCardContainer>
-          {vetVisits.map((visit) => (
-            <VetVisitsComponent vetVisit={visit} />
-          ))}
-          {vetVisits.length < 1 && <Text>No Vet Visits Present</Text>}
-        </VisitsCardContainer>
-      </MainContainer>
-    </Screen>
+    <DetailsCard>
+      <DetailsHeader row>
+        <HeaderLeft row>
+          <IconWrap centered>
+            <StethoscopeIcon centered size={24} color={"white"} />
+          </IconWrap>
+          <DetailTitleContainer row alignCenter>
+            <DetailsTitle>Vet Visit</DetailsTitle>
+          </DetailTitleContainer>
+        </HeaderLeft>
+        <HeaderRight row justifyEnd>
+          <DeleteVisit centered pointer>
+            <Text>Delete Visit</Text>
+          </DeleteVisit>
+          <Spacer horizontal size={20} />
+          <EditVisit centered pointer>
+            <Text>Edit Visit</Text>
+          </EditVisit>
+          <Spacer horizontal size={5} />
+        </HeaderRight>
+      </DetailsHeader>
+      <DetailsBodyContainer>
+        <DetailsBody>
+          <Text Subheading color={"rgba(106, 53, 230, 0.8)"}>
+            Concern: {vetVisit.visitConcern}
+          </Text>
+          <Spacer vertical size={5} />
+          <Text Subheading>Date: {vetVisit.visitDate}</Text>
+          <Spacer vertical size={5} />
+          <Text Subheading>Visit Notes: {vetVisit.visitNotes}</Text>
+        </DetailsBody>
+      </DetailsBodyContainer>
+    </DetailsCard>
   );
 }
-
-export default VetVisits;
 
 const MainContainer = styled(Container)`
   margin-top: 1vh;

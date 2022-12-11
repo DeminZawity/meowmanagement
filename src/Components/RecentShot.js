@@ -1,9 +1,11 @@
 import React, { useEffect } from "react";
 import styled from "styled-components";
+import { useNavigate } from "react-router-dom";
 import { BandAidIcon, StethoscopeIcon, ArrowIcon, ShotIcon } from "../Assets/Icons/Icons";
 import { Spacer, Text, Container } from "../Helpers/Design/Models";
 
-export function RecentShot({ shots }) {
+export function RecentShot({ shots, CatID }) {
+  const navigate = useNavigate();
   return (
     <DetailsCard fullWidth={shots != null}>
       <DetailsHeader row>
@@ -19,7 +21,9 @@ export function RecentShot({ shots }) {
         <HeaderRight row justifyEnd>
           {shots == null && (
             <VetInfoEdit centered pointer>
-              <Text centered>Add Shot</Text>
+              <Text centered onClick={() => navigate("/AddAShot")}>
+                Add Shot
+              </Text>
             </VetInfoEdit>
           )}
         </HeaderRight>
@@ -38,7 +42,7 @@ export function RecentShot({ shots }) {
         )}
       </DetailsBodyContainer>
       <DetailFooter flex>
-        <CatAdditionalInfo row centered pointer>
+        <CatAdditionalInfo row centered pointer onClick={() => navigate(`/ShotsCompleted/${CatID}`)}>
           <Text>Additional Information</Text>
           <Spacer horizontal size={15} />
           <ArrowIcon size={24} color={"#546F88"} />
