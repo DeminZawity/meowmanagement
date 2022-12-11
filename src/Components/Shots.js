@@ -2,42 +2,45 @@ import styled from "styled-components";
 import { useNavigate, useParams } from "react-router-dom";
 import { useEffect, useState } from "react";
 import { Text, Screen, Container, Spacer } from "../Helpers/Design/Models";
-import { StethoscopeIcon, ArrowIcon } from "../Assets/Icons/Icons";
-import { GetVetVisits } from "../Helpers/API/Calls";
-import { VetVisitsComponent } from "../Components/VetVisitsComponent";
+import { ShotIcon, ArrowIcon } from "../Assets/Icons/Icons";
 
-function VetVisits() {
-  const [vetVisits, setVetVisits] = useState([]);
-  const { CatID } = useParams();
-  const navigate = useNavigate();
-
-  useEffect(() => {
-    fetchVisits();
-  }, []);
-
-  var fetchVisits = async () => {
-    var visits = await GetVetVisits(CatID);
-    setVetVisits(visits);
-    console.log(vetVisits);
-  };
-
+export function Shots({ shots }) {
   return (
-    <Screen>
-      <MainContainer>
-        <Title> Vet Visits</Title>
-        <Spacer vertical size={40} />
-        <VisitsCardContainer>
-          {vetVisits.map((visit) => (
-            <VetVisitsComponent vetVisit={visit} />
-          ))}
-          {vetVisits.length < 1 && <Text>No Vet Visits Present</Text>}
-        </VisitsCardContainer>
-      </MainContainer>
-    </Screen>
+    <DetailsCard>
+      <DetailsHeader row>
+        <HeaderLeft row>
+          <IconWrap centered>
+            <ShotIcon centered size={24} color={"white"} />
+          </IconWrap>
+          <DetailTitleContainer row alignCenter>
+            <DetailsTitle>Vet Visit</DetailsTitle>
+          </DetailTitleContainer>
+        </HeaderLeft>
+        <HeaderRight row justifyEnd>
+          <DeleteShot centered pointer>
+            <Text>Delete Shot</Text>
+          </DeleteShot>
+          <Spacer horizontal size={20} />
+          <EditShot centered pointer>
+            <Text>Edit Shot</Text>
+          </EditShot>
+          <Spacer horizontal size={5} />
+        </HeaderRight>
+      </DetailsHeader>
+      <DetailsBodyContainer>
+        <DetailsBody>
+          <Text Subheading>Completed: {shots.completed}</Text>
+          <Spacer vertical size={5} />
+          <Text Subheading>Type Of: {shots.typeOfShot}</Text>
+          <Spacer vertical size={5} />
+          <Text Subheading color={"rgba(212, 88, 88, 0.8)"}>
+            Due Date: {shots.dueDate}
+          </Text>
+        </DetailsBody>
+      </DetailsBodyContainer>
+    </DetailsCard>
   );
 }
-
-export default VetVisits;
 
 const MainContainer = styled(Container)`
   margin-top: 1vh;
@@ -51,7 +54,7 @@ const Title = styled(Container)`
   font-size: 28px;
 `;
 
-const VisitsCardContainer = styled(Container)`
+const ShotsCardContainer = styled(Container)`
   flex-wrap: wrap;
   width: 100%;
 `;
@@ -90,14 +93,14 @@ const DetailsTitle = styled(Container)`
   margin-bottom: 10px;
 `;
 
-const DeleteVisit = styled(Container)`
+const DeleteShot = styled(Container)`
   background-color: #828282;
   border-radius: 5px;
   height: 3vh;
   width: 8vw;
 `;
 
-const EditVisit = styled(Container)`
+const EditShot = styled(Container)`
   background-color: #828282;
   border-radius: 5px;
   height: 3vh;

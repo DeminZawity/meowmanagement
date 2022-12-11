@@ -1,9 +1,11 @@
 import React, { useEffect } from "react";
+import { useNavigate } from "react-router-dom";
 import styled from "styled-components";
 import { BandAidIcon, StethoscopeIcon, ArrowIcon } from "../Assets/Icons/Icons";
 import { Spacer, Text, Container } from "../Helpers/Design/Models";
 
-export function RecentVisit({ vetVisit }) {
+export function RecentVisit({ vetVisit, CatID }) {
+  const navigate = useNavigate();
   return (
     <DetailsCard fullWidth={vetVisit != null}>
       <DetailsHeader row>
@@ -19,7 +21,9 @@ export function RecentVisit({ vetVisit }) {
         <HeaderRight row justifyEnd>
           {vetVisit == null && (
             <VetInfoEdit centered pointer>
-              <Text centered>Add Visit</Text>
+              <Text centered onClick={() => navigate("/AddVetVisit")}>
+                Add Visit
+              </Text>
             </VetInfoEdit>
           )}
         </HeaderRight>
@@ -40,7 +44,7 @@ export function RecentVisit({ vetVisit }) {
         )}
       </DetailsBodyContainer>
       <DetailFooter>
-        <CatAdditionalInfo row centered pointer>
+        <CatAdditionalInfo row centered pointer onClick={() => navigate(`/VetVisits/${CatID}`)}>
           <Text>Additional Information</Text>
           <Spacer horizontal size={15} />
           <ArrowIcon size={24} color={"#546F88"} />
