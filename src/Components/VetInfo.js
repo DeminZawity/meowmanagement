@@ -1,9 +1,11 @@
 import React, { useEffect } from "react";
 import styled from "styled-components";
+import { useNavigate } from "react-router-dom";
 import { BandAidIcon, StethoscopeIcon, ArrowIcon } from "../Assets/Icons/Icons";
 import { Spacer, Text, Container } from "../Helpers/Design/Models";
 
-export function VetInfo({ vetInfo }) {
+export function VetInfo({ vetInfo, CatID }) {
+  const navigate = useNavigate();
   useEffect(() => {
     console.log(vetInfo);
   }, []);
@@ -21,7 +23,9 @@ export function VetInfo({ vetInfo }) {
         <HeaderRight row justifyEnd>
           {vetInfo.length < 1 && (
             <VetInfoEdit centered pointer>
-              <Text centered>Add Vet</Text>
+              <Text centered onClick={() => navigate(`/AddVet/${CatID}`)}>
+                Add Vet
+              </Text>
             </VetInfoEdit>
           )}
           {vetInfo !== [] && vetInfo.length > 0 && (

@@ -32,7 +32,7 @@ function CatDetails() {
         <Title>Cat Details Page</Title>
         <Spacer vertical size={40} />
         <CatCardContainer column>
-          {vetInfo !== null && <VetInfo vetInfo={vetInfo} />}
+          {vetInfo !== null && <VetInfo vetInfo={vetInfo} CatID={ID} />}
           {vetVisit !== null && <RecentVisit vetVisit={vetVisit} CatID={ID} />}
           {shots !== null && <RecentShot shots={shots} CatID={ID} />}
         </CatCardContainer>

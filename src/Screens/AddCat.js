@@ -26,16 +26,22 @@ function AddCat() {
         name: "Domestic Shorthair",
       },
       {
-        name: "Siemese",
+        name: "Domestic LongHair",
       },
       {
-        name: "Balmic",
+        name: "Siamese",
       },
       {
-        name: "Slavic",
+        name: "Persian",
       },
       {
-        name: "Turkish Longhair",
+        name: "Maine Coon",
+      },
+      {
+        name: "Ragdoll",
+      },
+      {
+        name: "Bengal",
       },
     ];
 

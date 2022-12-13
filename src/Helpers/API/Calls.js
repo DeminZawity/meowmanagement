@@ -45,6 +45,71 @@ export async function AddCatFunction(FullName, Gender, Breed, CoatColor, UsersId
   });
 }
 
+export async function AddVetFunction(VetName, VetAddress, VetPhoneNumber, VetFaxNumber, UserID) {
+  const data = {
+    vetName: VetName,
+    vetAddress: VetAddress,
+    vetPhoneNumber: VetPhoneNumber,
+    vetFaxNumber: VetFaxNumber,
+    userID: UserID,
+  };
+  await fetch(`http://localhost:8088/vetInformations`, {
+    method: "POST",
+    headers: {
+      Accept: "application/json",
+      "Content-Type": "application/json",
+    },
+    body: JSON.stringify(data),
+  }).then((res) => {
+    if (res.status == 201 && res.statusText == "Created") {
+      return true;
+    } else {
+      return false;
+    }
+  });
+}
+
+export async function GetNewVetFunction(UsersId, VetPhoneNumber) {
+  var NewVet = [];
+  await fetch(`http://localhost:8088/vetInformations?userID=${UsersId}`)
+    .then((res) => res.json())
+    .then((data) => {
+      NewVet = data.filter((obj) => obj.vetPhoneNumber == VetPhoneNumber);
+    });
+
+  return NewVet;
+}
+
+export async function UpdateCatVetFunction(CatID, VetID) {
+  await fetch(`http://localhost:8088/cats/${CatID}`, {
+    method: "PATCH",
+    headers: {
+      "Content-Type": "application/json",
+    },
+    body: JSON.stringify({
+      vetInformationId: VetID,
+    }),
+  });
+}
+
+export async function GetUpdatedVet(VetName, VetAddress, VetPhoneNumber, VetFaxNumber, UsersId, CatID) {
+  var AddVet = await AddVetFunction(VetName, VetAddress, VetPhoneNumber, VetFaxNumber, UsersId);
+  var GetNewVet = await GetNewVetFunction(UsersId, VetPhoneNumber);
+  var UpdateCatVet = await UpdateCatVetFunction(CatID, GetNewVet[0].id);
+  return console.log("Success!");
+}
+
+export async function GetMyCats(usersId) {
+  var data = [];
+  await fetch(`http://localhost:8088/cats?usersId=${usersId}`)
+    .then((res) => res.json())
+    .then((cats) => {
+      data = cats;
+    });
+
+  return data;
+}
+
 export async function UserLogin(Email, Password) {
   var data = [];
   await fetch(`http://localhost:8088/users?email=${Email}`)
@@ -61,17 +126,6 @@ export async function UserLogin(Email, Password) {
       } else {
         data = "Failed";
       }
-    });
-
-  return data;
-}
-
-export async function GetMyCats(usersId) {
-  var data = [];
-  await fetch(`http://localhost:8088/cats?usersId=${usersId}`)
-    .then((res) => res.json())
-    .then((cats) => {
-      data = cats;
     });
 
   return data;

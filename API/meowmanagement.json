@@ -81,7 +81,7 @@
       "vetInformationId": 6
     },
     {
-      "catName": "Alex",
+      "catName": "Alex Cueto",
       "gender": "Female",
       "breed": "Turkish Longhair",
       "coatColor": "Gray",
@@ -96,42 +96,48 @@
       "vetName": "Dr. Charles Kinard",
       "vetAddress": "1062 Middle Tennessee Blvd. Murfreesboro, TN 37130",
       "vetPhoneNumber": "310-571-6500",
-      "vetFaxNumber": "310-571-6700"
+      "vetFaxNumber": "310-571-6700",
+      "userID": 1
     },
     {
       "id": 2,
       "vetName": "Dr. Kathryn McPherson",
       "vetAddress": "1806 Memorial Blvd. Suite C Murfreesboro, TN 37129",
       "vetPhoneNumber": "615-896-9524",
-      "vetFaxNumber": "615-743-3549"
+      "vetFaxNumber": "615-743-3549",
+      "userID": 1
     },
     {
       "id": 3,
       "vetName": "Dr. Kylie Chciuk",
       "vetAddress": "1807 NW Broad St, Murfreesboro, TN 37129",
       "vetPhoneNumber": "615-893-1728",
-      "vetFaxNumber": "615-696-2574"
+      "vetFaxNumber": "615-696-2574",
+      "userID": 1
     },
     {
       "id": 4,
       "vetName": "Dr. Kelsey Hays",
       "vetAddress": "2114 N. Thompson Ln Murfreesboro, TN, 37129",
       "vetPhoneNumber": "615-895-1240",
-      "vetFaxNumber": "615-549-2468"
+      "vetFaxNumber": "615-549-2468",
+      "userID": 4
     },
     {
       "id": 5,
       "vetName": "Dr. Courtney Beasley",
       "vetAddress": "2114 N. Thompson Ln Murfreesboro, TN, 37129",
       "vetPhoneNumber": "615-895-1240",
-      "vetFaxNumber": "615-549-2468"
+      "vetFaxNumber": "615-549-2468",
+      "userID": 2
     },
     {
       "id": 6,
       "vetName": "Dr. Donna M. Steuart",
       "vetAddress": "2215 Keeneland Commercial Boulevard Murfreesboro, TN  37127",
       "vetPhoneNumber": "615-890-6878",
-      "vetFaxNumber": "615-378-1975"
+      "vetFaxNumber": "615-378-1975",
+      "userID": 3
     }
   ],
   "vetVisits": [
