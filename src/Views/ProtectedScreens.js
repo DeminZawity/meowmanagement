@@ -9,6 +9,7 @@ import EditVetVisit from "../Screens/EditVetVisit";
 import ShotsCompleted from "../Screens/ShotsCompleted";
 import EditShot from "../Screens/EditShot";
 import AddShot from "../Screens/AddShot";
+import AddVet from "../Screens/AddVet";
 
 function ProtectedScreens() {
   return (
@@ -23,6 +24,7 @@ function ProtectedScreens() {
       <Route path="/ShotsCompleted/:CatID" element={<ShotsCompleted />} />
       <Route path="/EditShot" element={<EditShot />} />
       <Route path="/AddAShot" element={<AddShot />} />
+      <Route path="/AddVet/:CatID" element={<AddVet />} />
     </Routes>
   );
 }
