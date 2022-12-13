@@ -44,6 +44,28 @@ export async function AddCatFunction(FullName, Gender, Breed, CoatColor, UsersId
     }
   });
 }
+export async function AddVetVisitFunction(VisitConcern, VisitDate, VisitNotes, CatID) {
+  const data = {
+    visitConcern: VisitConcern,
+    visitDate: VisitDate,
+    visitNotes: VisitNotes,
+    catsId: CatID,
+  };
+  await fetch(`http://localhost:8088/vetVisits`, {
+    method: "POST",
+    headers: {
+      Accept: "application/json",
+      "Content-Type": "application/json",
+    },
+    body: JSON.stringify(data),
+  }).then((res) => {
+    if (res.status == 201 && res.statusText == "Created") {
+      return true;
+    } else {
+      return false;
+    }
+  });
+}
 
 export async function AddVetFunction(VetName, VetAddress, VetPhoneNumber, VetFaxNumber, UserID) {
   const data = {

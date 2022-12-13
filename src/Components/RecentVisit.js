@@ -21,7 +21,7 @@ export function RecentVisit({ vetVisit, CatID }) {
         <HeaderRight row justifyEnd>
           {vetVisit == null && (
             <VetInfoEdit centered pointer>
-              <Text centered onClick={() => navigate("/AddVetVisit")}>
+              <Text centered onClick={() => navigate(`/AddVetVisit/${CatID}`)}>
                 Add Visit
               </Text>
             </VetInfoEdit>
