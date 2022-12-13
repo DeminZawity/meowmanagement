@@ -13,7 +13,7 @@ export function Shots({ shots }) {
             <ShotIcon centered size={24} color={"white"} />
           </IconWrap>
           <DetailTitleContainer row alignCenter>
-            <DetailsTitle>Vet Visit</DetailsTitle>
+            <DetailsTitle>Shot Completed</DetailsTitle>
           </DetailTitleContainer>
         </HeaderLeft>
         <HeaderRight row justifyEnd>
