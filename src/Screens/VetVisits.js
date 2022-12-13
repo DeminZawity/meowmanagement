@@ -24,7 +24,16 @@ function VetVisits() {
   return (
     <Screen>
       <MainContainer>
-        <Title> Vet Visits</Title>
+        <Header row>
+          <HeaderLeft>
+            <Title> Vet Visits</Title>
+          </HeaderLeft>
+          <HeaderRight row justifyEnd>
+            <AddVisitButton centered pointer onClick={() => navigate(`/AddVetVisit/${CatID}`)}>
+              <Text>Add Visit</Text>
+            </AddVisitButton>
+          </HeaderRight>
+        </Header>
         <Spacer vertical size={40} />
         <VisitsCardContainer>
           {vetVisits.map((visit) => (
@@ -67,14 +76,6 @@ const DetailsCard = styled(Container)`
 const DetailsHeader = styled(Container)`
   height: 30%;
 `;
-const HeaderLeft = styled(Container)`
-  width: 50%;
-`;
-const HeaderRight = styled(Container)`
-  width: 50%;
-  padding-top: 7px;
-  padding-right: 7px;
-`;
 
 const IconWrap = styled(Container)`
   min-width: 5vh;
@@ -112,4 +113,23 @@ const DetailsBodyContainer = styled(Container)`
 const DetailsBody = styled(Container)`
   height: 100%;
   margin-left: 70px;
+`;
+const Header = styled(Container)`
+  width: 100%;
+`;
+const HeaderLeft = styled(Container)`
+  width: 50%;
+`;
+const HeaderRight = styled(Container)`
+  width: 50%;
+`;
+const AddVisitButton = styled(Container)`
+  background-color: #828282;
+  border-radius: 5px;
+  height: 4vh;
+  min-height: 4vh;
+  max-height: 4vh;
+  width: 10vw;
+  min-width: 10vw;
+  max-width: 10vw;
 `;

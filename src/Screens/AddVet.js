@@ -56,7 +56,7 @@ function AddVet() {
         </AddVetCard>
         <Footer column alignEnd>
           <AddButton justifyCenter pointer onClick={() => SaveVetButton()}>
-            <Text> Add Vet</Text>
+            <Text>Add Vet</Text>
           </AddButton>
         </Footer>
       </SubContainer>
