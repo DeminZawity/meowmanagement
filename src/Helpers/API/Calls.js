@@ -179,7 +179,44 @@ export async function UserLogin(Email, Password) {
 
 export async function DeleteCat(CatID) {
   var data = [];
-  await fetch(`http://localhost:8088/cats?id=${CatID}`)
+  await fetch(`http://localhost:8088/cats/${CatID}`, {
+    method: "DELETE",
+    headers: {
+      "Content-Type": "application/json",
+    },
+  })
+    .then((res) => res.json())
+    .then((cats) => {
+      data = cats;
+    });
+
+  return data;
+}
+
+export async function DeleteVisit(VisitID) {
+  var data = [];
+  await fetch(`http://localhost:8088/vetVisits/${VisitID}`, {
+    method: "DELETE",
+    headers: {
+      "Content-Type": "application/json",
+    },
+  })
+    .then((res) => res.json())
+    .then((cats) => {
+      data = cats;
+    });
+
+  return data;
+}
+
+export async function DeleteShot(ShotID) {
+  var data = [];
+  await fetch(`http://localhost:8088/shots/${ShotID}`, {
+    method: "DELETE",
+    headers: {
+      "Content-Type": "application/json",
+    },
+  })
     .then((res) => res.json())
     .then((cats) => {
       data = cats;

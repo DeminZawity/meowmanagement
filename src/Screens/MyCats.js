@@ -2,7 +2,7 @@ import { useEffect, useState } from "react";
 import { useNavigate, Link } from "react-router-dom";
 import styled from "styled-components";
 import { Text, Screen, Container, Spacer } from "../Helpers/Design/Models";
-import { GetMyCats } from "../Helpers/API/Calls";
+import { GetMyCats, DeleteCat } from "../Helpers/API/Calls";
 import { CatIcon, ArrowIcon } from "../Assets/Icons/Icons";
 import CatCard from "../Components/CatCard";
 
@@ -21,10 +21,12 @@ function MyCats() {
     setCats(filteredCats);
   };
 
-  var deleteCat = (id) => {
-    var filteredCats = cats.filter((cat) => cat.id != id);
+  var deleteCat = async (id) => {
+    // var filteredCats = cats.filter((cat) => cat.id != id);
 
-    setCats(filteredCats);
+    const Delete = await DeleteCat(id);
+    return Delete;
+    // setCats(filteredCats);
   };
 
   return (
