@@ -79,15 +79,6 @@
       "coatColor": "Brown",
       "usersId": 3,
       "vetInformationId": 6
-    },
-    {
-      "catName": "Alex Cueto",
-      "gender": "Female",
-      "breed": "Turkish Longhair",
-      "coatColor": "Gray",
-      "usersId": 1,
-      "vetInformationId": null,
-      "id": 7
     }
   ],
   "vetInformations": [
