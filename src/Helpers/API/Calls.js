@@ -28,6 +28,7 @@ export async function AddCatFunction(FullName, Gender, Breed, CoatColor, UsersId
     coatColor: CoatColor,
     usersId: UsersId,
     vetInformationId: null,
+    enabled: 1,
   };
   await fetch(`http://localhost:8088/cats`, {
     method: "POST",
@@ -147,7 +148,7 @@ export async function GetUpdatedVet(VetName, VetAddress, VetPhoneNumber, VetFaxN
 
 export async function GetMyCats(usersId) {
   var data = [];
-  await fetch(`http://localhost:8088/cats?usersId=${usersId}`)
+  await fetch(`http://localhost:8088/cats?usersId=${usersId}&enabled=1`)
     .then((res) => res.json())
     .then((cats) => {
       data = cats;
@@ -180,10 +181,13 @@ export async function UserLogin(Email, Password) {
 export async function DeleteCat(CatID) {
   var data = [];
   await fetch(`http://localhost:8088/cats/${CatID}`, {
-    method: "DELETE",
+    method: "PATCH",
     headers: {
       "Content-Type": "application/json",
     },
+    body: JSON.stringify({
+      enabled: 0,
+    }),
   })
     .then((res) => res.json())
     .then((cats) => {
@@ -193,7 +197,7 @@ export async function DeleteCat(CatID) {
   return data;
 }
 
-export async function DeleteVisit(VisitID) {
+export async function DeleteVisitFunction(VisitID) {
   var data = [];
   await fetch(`http://localhost:8088/vetVisits/${VisitID}`, {
     method: "DELETE",
@@ -209,7 +213,7 @@ export async function DeleteVisit(VisitID) {
   return data;
 }
 
-export async function DeleteShot(ShotID) {
+export async function DeleteShotFunction(ShotID) {
   var data = [];
   await fetch(`http://localhost:8088/shots/${ShotID}`, {
     method: "DELETE",

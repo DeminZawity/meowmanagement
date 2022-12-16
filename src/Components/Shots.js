@@ -4,7 +4,7 @@ import { useEffect, useState } from "react";
 import { Text, Screen, Container, Spacer } from "../Helpers/Design/Models";
 import { ShotIcon, ArrowIcon } from "../Assets/Icons/Icons";
 
-export function Shots({ shots }) {
+export function Shots({ shots, onDelete }) {
   return (
     <DetailsCard>
       <DetailsHeader row>
@@ -17,7 +17,7 @@ export function Shots({ shots }) {
           </DetailTitleContainer>
         </HeaderLeft>
         <HeaderRight row justifyEnd>
-          <DeleteShot centered pointer>
+          <DeleteShot centered pointer onClick={() => onDelete(shots.id)}>
             <Text>Delete Shot</Text>
           </DeleteShot>
           <Spacer horizontal size={20} />

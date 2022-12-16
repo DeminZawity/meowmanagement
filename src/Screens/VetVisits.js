@@ -3,7 +3,7 @@ import { useNavigate, useParams } from "react-router-dom";
 import { useEffect, useState } from "react";
 import { Text, Screen, Container, Spacer } from "../Helpers/Design/Models";
 import { StethoscopeIcon, ArrowIcon } from "../Assets/Icons/Icons";
-import { GetVetVisits } from "../Helpers/API/Calls";
+import { GetVetVisits, DeleteVisitFunction } from "../Helpers/API/Calls";
 import { VetVisitsComponent } from "../Components/VetVisitsComponent";
 
 function VetVisits() {
@@ -19,6 +19,11 @@ function VetVisits() {
     var visits = await GetVetVisits(CatID);
     setVetVisits(visits);
     console.log(vetVisits);
+  };
+
+  var deleteVisit = async (id) => {
+    const Delete = await DeleteVisitFunction(id);
+    return Delete;
   };
 
   return (
@@ -37,7 +42,7 @@ function VetVisits() {
         <Spacer vertical size={40} />
         <VisitsCardContainer>
           {vetVisits.map((visit) => (
-            <VetVisitsComponent vetVisit={visit} />
+            <VetVisitsComponent vetVisit={visit} onDelete={(id) => deleteVisit(id)} />
           ))}
           {vetVisits.length < 1 && <Text>No Vet Visits Present</Text>}
         </VisitsCardContainer>
