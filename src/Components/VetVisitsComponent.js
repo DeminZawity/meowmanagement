@@ -4,7 +4,7 @@ import { useEffect, useState } from "react";
 import { Text, Screen, Container, Spacer } from "../Helpers/Design/Models";
 import { StethoscopeIcon, ArrowIcon } from "../Assets/Icons/Icons";
 
-export function VetVisitsComponent({ vetVisit }) {
+export function VetVisitsComponent({ vetVisit, onDelete }) {
   return (
     <DetailsCard>
       <DetailsHeader row>
@@ -17,7 +17,7 @@ export function VetVisitsComponent({ vetVisit }) {
           </DetailTitleContainer>
         </HeaderLeft>
         <HeaderRight row justifyEnd>
-          <DeleteVisit centered pointer>
+          <DeleteVisit centered pointer onClick={() => onDelete(vetVisit.id)}>
             <Text>Delete Visit</Text>
           </DeleteVisit>
           <Spacer horizontal size={20} />

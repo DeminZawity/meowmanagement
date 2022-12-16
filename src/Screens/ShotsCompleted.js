@@ -3,7 +3,7 @@ import { useNavigate, useParams } from "react-router-dom";
 import { useEffect, useState } from "react";
 import { Text, Screen, Container, Spacer } from "../Helpers/Design/Models";
 import { ShotIcon, ArrowIcon } from "../Assets/Icons/Icons";
-import { GetShots } from "../Helpers/API/Calls";
+import { GetShots, DeleteShotFunction } from "../Helpers/API/Calls";
 import { Shots } from "../Components/Shots";
 
 function ShotsCompleted() {
@@ -19,6 +19,11 @@ function ShotsCompleted() {
     var filteredShots = await GetShots(CatID);
     setShots(filteredShots);
     console.log(shots);
+  };
+
+  var deleteShot = async (id) => {
+    const Delete = await DeleteShotFunction(id);
+    return Delete;
   };
 
   return (
@@ -37,7 +42,7 @@ function ShotsCompleted() {
         <Spacer vertical size={40} />
         <ShotsCardContainer>
           {shots.map((shot) => (
-            <Shots shots={shot} />
+            <Shots shots={shot} onDelete={(id) => deleteShot(id)} />
           ))}
           {shots.length < 1 && <Text>No Shots Completed</Text>}
         </ShotsCardContainer>
