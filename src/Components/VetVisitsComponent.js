@@ -3,8 +3,10 @@ import { useNavigate, useParams } from "react-router-dom";
 import { useEffect, useState } from "react";
 import { Text, Screen, Container, Spacer } from "../Helpers/Design/Models";
 import { StethoscopeIcon, ArrowIcon } from "../Assets/Icons/Icons";
-
+import moment from "moment";
 export function VetVisitsComponent({ vetVisit, onDelete }) {
+  const navigate = useNavigate();
+
   return (
     <DetailsCard>
       <DetailsHeader row>
@@ -21,7 +23,7 @@ export function VetVisitsComponent({ vetVisit, onDelete }) {
             <Text>Delete Visit</Text>
           </DeleteVisit>
           <Spacer horizontal size={20} />
-          <EditVisit centered pointer>
+          <EditVisit centered pointer onClick={() => navigate(`/EditVetVisit/${vetVisit.id}`)}>
             <Text>Edit Visit</Text>
           </EditVisit>
           <Spacer horizontal size={5} />
@@ -33,7 +35,7 @@ export function VetVisitsComponent({ vetVisit, onDelete }) {
             Concern: {vetVisit.visitConcern}
           </Text>
           <Spacer vertical size={5} />
-          <Text Subheading>Date: {vetVisit.visitDate}</Text>
+          <Text Subheading>Date: {moment(vetVisit.visitDate).format("MMMM Do YYYY")}</Text>
           <Spacer vertical size={5} />
           <Text Subheading>Visit Notes: {vetVisit.visitNotes}</Text>
         </DetailsBody>

@@ -21,9 +21,9 @@ function ProtectedScreens() {
       <Route path="/EditVet/:vetID" element={<EditVet />} />
       <Route path="/VetVisits/:CatID" element={<VetVisits />} />
       <Route path="/AddVetVisit/:CatID" element={<AddVetVisit />} />
-      <Route path="/EditVetVisit" element={<EditVetVisit />} />
+      <Route path="/EditVetVisit/:VisitID" element={<EditVetVisit />} />
       <Route path="/ShotsCompleted/:CatID" element={<ShotsCompleted />} />
-      <Route path="/EditShot" element={<EditShot />} />
+      <Route path="/EditShot/:ShotID" element={<EditShot />} />
       <Route path="/AddAShot/:CatID" element={<AddShot />} />
       <Route path="/AddVet/:CatID" element={<AddVet />} />
       <Route path="/EditCat/:CatID" element={<EditCat />} />

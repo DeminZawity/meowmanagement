@@ -141,49 +141,49 @@
     {
       "id": 1,
       "visitConcern": "Physical Checkup",
-      "visitDate": "10-01-2022",
+      "visitDate": "2022-10-01",
       "visitNotes": "Completed an annual physical checkup. There were no new concerns reported.",
       "catsId": 1
     },
     {
       "id": 2,
       "visitConcern": "Bald Patches on Stomach",
-      "visitDate": "07-22-2022",
+      "visitDate": "2022-07-22",
       "visitNotes": "Completed allergy testing. Noted that he is allergic to his kitty litter. Will need to buy him kitty litter for cats with allergies.",
       "catsId": 2
     },
     {
       "id": 3,
       "visitConcern": "Physical Checkup",
-      "visitDate": "06-15-2022",
+      "visitDate": "2022-06-15",
       "visitNotes": "Completed an annual physical checkup. There were no new concerns reported except for his weight. Need to put him on a diet.",
       "catsId": 6
     },
     {
       "id": 4,
       "visitConcern": "Randomly Throwing Up",
-      "visitDate": "05-20-2022",
+      "visitDate": "2022-05-20",
       "visitNotes": "She is eating her food too fast which is causing her to vomit. I need to start feeding her in smaller amounts.",
       "catsId": 4
     },
     {
       "id": 5,
       "visitConcern": "Meowing for NO reason",
-      "visitDate": "08-05-2022",
+      "visitDate": "2022-08-05",
       "visitNotes": "I thought he was meowing because he was sick. He is just a talkative breed and will probably meow loudly for the rest of his life.",
       "catsId": 3
     },
     {
       "id": 6,
       "visitConcern": "Pooping outside of the litter box",
-      "visitDate": "03-17-2022",
+      "visitDate": "2022-03-17",
       "visitNotes": "She was pooping outside of the litterbox because she had worms. The vet gave me medicine to give to her. ",
       "catsId": 5
     },
     {
       "id": 7,
       "visitConcern": "Lethargic Behaviour",
-      "visitDate": "12-01-2022",
+      "visitDate": "2022-12-01",
       "visitNotes": "She has been sleeping a lot lately, and I got worried. The vet said she is fine, and she has just been enjoying napping lately.",
       "catsId": 1
     }
@@ -191,51 +191,51 @@
   "shots": [
     {
       "id": 1,
-      "completed": "10-01-2022",
+      "completed": "2022-10-01",
       "typeOfShot": "Rabies",
-      "dueDate": "10-01-2023",
+      "dueDate": "2023-10-01",
       "catsId": 1
     },
     {
       "id": 2,
-      "completed": "07-22-2022",
+      "completed": "2022-07-22",
       "typeOfShot": "Rabies",
-      "dueDate": "07-22-2023",
+      "dueDate": "2023-07-22",
       "catsId": 2
     },
     {
       "id": 2,
-      "completed": "08-05-2022",
+      "completed": "2022-08-05",
       "typeOfShot": "Rabies",
-      "dueDate": "08-05-2023",
+      "dueDate": "2023-08-05",
       "catsId": 3
     },
     {
       "id": 4,
-      "completed": "05-20-2022",
+      "completed": "2022-05-20",
       "typeOfShot": "Rabies",
-      "dueDate": "05-20-2023",
+      "dueDate": "2023-05-20",
       "catsId": 4
     },
     {
       "id": 5,
-      "completed": "03-17-2022",
+      "completed": "2022-03-17",
       "typeOfShot": "Rabies",
-      "dueDate": "03-17-2023",
+      "dueDate": "2023-03-17",
       "catsId": 5
     },
     {
       "id": 6,
-      "completed": "06-15-2022",
+      "completed": "2022-06-15",
       "typeOfShot": "Rabies",
-      "dueDate": "06-15-2023",
+      "dueDate": "2023-06-15",
       "catsId": 6
     },
     {
       "id": 7,
-      "completed": "12-01-2022",
+      "completed": "2022-12-01",
       "typeOfShot": "Rabies",
-      "dueDate": "12-01-2023",
+      "dueDate": "2023-12-01",
       "catsId": 1
     }
   ]

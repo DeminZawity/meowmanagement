@@ -310,3 +310,53 @@ export async function UpdateCat(CatID, CatName, Gender, Breed, CoatColor) {
     }),
   });
 }
+
+export async function GetVetVisitsFunction(VisitID) {
+  var data = [];
+  await fetch(`http://localhost:8088/vetVisits?id=${VisitID}`)
+    .then((res) => res.json())
+    .then((visits) => {
+      data = visits;
+    });
+
+  return data;
+}
+
+export async function UpdateVetVisit(VisitID, VisitConcern, VisitDate, VisitNotes) {
+  await fetch(`http://localhost:8088/vetVisits/${VisitID}`, {
+    method: "PATCH",
+    headers: {
+      "Content-Type": "application/json",
+    },
+    body: JSON.stringify({
+      visitConcern: VisitConcern,
+      visitDate: VisitDate,
+      visitNotes: VisitNotes,
+    }),
+  });
+}
+
+export async function GetShotsFunction(ShotID) {
+  var data = [];
+  await fetch(`http://localhost:8088/shots?id=${ShotID}`)
+    .then((res) => res.json())
+    .then((shots) => {
+      data = shots;
+    });
+
+  return data;
+}
+
+export async function UpdateShots(ShotID, Completed, TypeOfShot, DueDate) {
+  await fetch(`http://localhost:8088/shots/${ShotID}`, {
+    method: "PATCH",
+    headers: {
+      "Content-Type": "application/json",
+    },
+    body: JSON.stringify({
+      completed: Completed,
+      typeOfShot: TypeOfShot,
+      dueDate: DueDate,
+    }),
+  });
+}

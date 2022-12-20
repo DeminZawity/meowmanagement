@@ -2,6 +2,7 @@ import React, { useEffect } from "react";
 import styled from "styled-components";
 import { useNavigate } from "react-router-dom";
 import { BandAidIcon, StethoscopeIcon, ArrowIcon, ShotIcon } from "../Assets/Icons/Icons";
+import moment from "moment";
 import { Spacer, Text, Container } from "../Helpers/Design/Models";
 
 export function RecentShot({ shots, CatID }) {
@@ -35,9 +36,11 @@ export function RecentShot({ shots, CatID }) {
           </DetailsBody>
         ) : (
           <DetailsBody column>
-            <DetailsText>Completed: {shots.completed}</DetailsText>
-            <DetailsText>Type Of Shot: {shots.typeOfShot}</DetailsText>
-            <DetailsText>Due Date: {shots.dueDate}</DetailsText>
+            <Text Subheading>Completed: {moment(shots.completed).format("MMMM Do YYYY")}</Text>
+            <Text Subheading>Type Of Shot: {shots.typeOfShot}</Text>
+            <Text Subheading color={"rgba(212, 88, 88, 0.8)"}>
+              Due Date: {moment(shots.dueDate).format("MMMM Do YYYY")}
+            </Text>
           </DetailsBody>
         )}
       </DetailsBodyContainer>

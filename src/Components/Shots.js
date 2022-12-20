@@ -2,9 +2,12 @@ import styled from "styled-components";
 import { useNavigate, useParams } from "react-router-dom";
 import { useEffect, useState } from "react";
 import { Text, Screen, Container, Spacer } from "../Helpers/Design/Models";
+import moment from "moment";
 import { ShotIcon, ArrowIcon } from "../Assets/Icons/Icons";
 
 export function Shots({ shots, onDelete }) {
+  const navigate = useNavigate();
+
   return (
     <DetailsCard>
       <DetailsHeader row>
@@ -21,7 +24,7 @@ export function Shots({ shots, onDelete }) {
             <Text>Delete Shot</Text>
           </DeleteShot>
           <Spacer horizontal size={20} />
-          <EditShot centered pointer>
+          <EditShot centered pointer onClick={() => navigate(`/EditShot/${shots.id}`)}>
             <Text>Edit Shot</Text>
           </EditShot>
           <Spacer horizontal size={5} />
@@ -29,12 +32,12 @@ export function Shots({ shots, onDelete }) {
       </DetailsHeader>
       <DetailsBodyContainer>
         <DetailsBody>
-          <Text Subheading>Completed: {shots.completed}</Text>
+          <Text Subheading>Completed: {moment(shots.completed).format("MMMM Do YYYY")}</Text>
           <Spacer vertical size={5} />
           <Text Subheading>Type Of: {shots.typeOfShot}</Text>
           <Spacer vertical size={5} />
           <Text Subheading color={"rgba(212, 88, 88, 0.8)"}>
-            Due Date: {shots.dueDate}
+            Due Date: {moment(shots.dueDate).format("MMMM Do YYYY")}
           </Text>
         </DetailsBody>
       </DetailsBodyContainer>
