@@ -2,6 +2,7 @@ import React, { useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import styled from "styled-components";
 import { BandAidIcon, StethoscopeIcon, ArrowIcon } from "../Assets/Icons/Icons";
+import moment from "moment";
 import { Spacer, Text, Container } from "../Helpers/Design/Models";
 
 export function RecentVisit({ vetVisit, CatID }) {
@@ -38,7 +39,7 @@ export function RecentVisit({ vetVisit, CatID }) {
             <Text Subheading color={"rgba(106, 53, 230, 0.8)"}>
               Concern: {vetVisit.visitConcern}
             </Text>
-            <Text Subheading>Date: {vetVisit.visitDate}</Text>
+            <Text Subheading>Date: {moment(vetVisit.visitDate).format("MMMM Do YYYY")}</Text>
             <Text Subheading>Vet Visit: {vetVisit.visitNotes}</Text>
           </DetailsBody>
         )}
