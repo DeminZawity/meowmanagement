@@ -23,7 +23,7 @@ export default function CatCard(props) {
             <Text centered>Delete Cat</Text>
           </CatInfoEdit>
           <Spacer horizontal size={7} />
-          <CatInfoEdit centered pointer>
+          <CatInfoEdit centered pointer onClick={() => navigate(`/EditCat/${props.data.id}`)}>
             <Text centered>Edit Cat</Text>
           </CatInfoEdit>
         </HeaderRight>

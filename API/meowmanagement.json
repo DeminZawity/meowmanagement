@@ -91,7 +91,7 @@
     {
       "id": 1,
       "vetName": "Dr. Charles Kinard",
-      "vetAddress": "1062 Middle Tennessee Blvd. Murfreesboro, TN 37130",
+      "vetAddress": "1062 Middle Tennessee Blvd Murfreesboro, TN 37130",
       "vetPhoneNumber": "310-571-6500",
       "vetFaxNumber": "310-571-6700",
       "userID": 1
@@ -182,9 +182,9 @@
     },
     {
       "id": 7,
-      "visitConcern": "Won't stop sleeping",
+      "visitConcern": "Lethargic Behaviour",
       "visitDate": "12-01-2022",
-      "visitNotes": "Your cat is just lazy. They just want to sleep, so just leave them alone.",
+      "visitNotes": "She has been sleeping a lot lately, and I got worried. The vet said she is fine, and she has just been enjoying napping lately.",
       "catsId": 1
     }
   ],

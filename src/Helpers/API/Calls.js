@@ -240,6 +240,17 @@ export async function GetVetInformation(VetID) {
   return data;
 }
 
+export async function GetCats(CatID) {
+  var data = [];
+  await fetch(`http://localhost:8088/cats?id=${CatID}`)
+    .then((res) => res.json())
+    .then((cats) => {
+      data = cats;
+    });
+
+  return data;
+}
+
 export async function GetVetVisits(CatID) {
   var data = [];
   await fetch(`http://localhost:8088/vetVisits?catsId=${CatID}`)
@@ -268,4 +279,34 @@ export async function GetCatDetails(CatId, VetID) {
   var shots = await GetShots(CatId);
   var catDetails = { vetInformation, vetVisits, shots };
   return catDetails;
+}
+
+export async function UpdateVetInfoFunction(VetID, VetName, VetAddress, VetPhoneNumber, VetFaxNumber) {
+  await fetch(`http://localhost:8088/vetInformations/${VetID}`, {
+    method: "PATCH",
+    headers: {
+      "Content-Type": "application/json",
+    },
+    body: JSON.stringify({
+      vetName: VetName,
+      vetAddress: VetAddress,
+      vetPhoneNumber: VetPhoneNumber,
+      vetFaxNumber: VetFaxNumber,
+    }),
+  });
+}
+
+export async function UpdateCat(CatID, CatName, Gender, Breed, CoatColor) {
+  await fetch(`http://localhost:8088/cats/${CatID}`, {
+    method: "PATCH",
+    headers: {
+      "Content-Type": "application/json",
+    },
+    body: JSON.stringify({
+      catName: CatName,
+      gender: Gender,
+      breed: Breed,
+      coatColor: CoatColor,
+    }),
+  });
 }
