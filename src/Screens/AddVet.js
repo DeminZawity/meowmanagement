@@ -63,9 +63,6 @@ function AddVet() {
     </Screen>
   );
 }
-{
-  /* <Btn onClick={() => testAPI()}></Btn> */
-}
 
 export default AddVet;
 

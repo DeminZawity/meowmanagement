@@ -30,7 +30,9 @@ export function VetInfo({ vetInfo, CatID }) {
           )}
           {vetInfo !== [] && vetInfo.length > 0 && (
             <VetInfoEdit centered pointer>
-              <Text centered>Edit Vet</Text>
+              <Text centered onClick={() => navigate(`/EditVet/${vetInfo[0].id}`)}>
+                Edit Vet
+              </Text>
             </VetInfoEdit>
           )}
         </HeaderRight>
